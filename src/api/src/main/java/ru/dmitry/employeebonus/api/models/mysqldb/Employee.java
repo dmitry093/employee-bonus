@@ -7,6 +7,7 @@ import lombok.Setter;
 import ru.dmitry.employeebonus.api.models.dto.EmployeeDto;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table (name = "employee")
@@ -25,7 +26,8 @@ public class Employee {
     @Column(name="patronymic")
     private String patronymic;
 
-    public Employee (EmployeeDto employeeDto){
+    public Employee (@NotNull EmployeeDto employeeDto){
+        this.id = employeeDto.getId();
         this.firstName = employeeDto.getFirstName();
         this.secondName = employeeDto.getSecondName();
         this.patronymic = employeeDto.getPatronymic();

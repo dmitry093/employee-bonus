@@ -24,3 +24,25 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+# dependencies
+/src/bonus/node_modules
+/src/bonus/.pnp
+/src/bonus.pnp.js
+
+# testing
+/src/bonus/coverage
+
+# production
+/src/bonus/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+/src/bonus/npm-debug.log*
+/src/bonus/yarn-debug.log*
+/src/bonus/yarn-error.log*

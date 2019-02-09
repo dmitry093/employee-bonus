@@ -9,6 +9,10 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 @Data
 public class EmployeeDto {
+    @JsonProperty("id")
+    @JsonInclude(NON_NULL)
+    private int id;
+
     @JsonProperty("first_name")
     @JsonInclude(NON_NULL)
     private String firstName;
@@ -21,6 +25,7 @@ public class EmployeeDto {
     private String patronymic;
 
     public EmployeeDto(Employee employee) {
+        this.id = employee.getId();
         this.firstName = employee.getFirstName();
         this.secondName = employee.getSecondName();
         this.patronymic = employee.getPatronymic();

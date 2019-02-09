@@ -1,0 +1,12 @@
+{
+  "en": {
+    "translation": {
+      "Welcome": "Welcome to the Employee Bonus"
+    }
+  },
+  "ru": {
+    "translation": {
+      "Welcome": "Добро пожаловать в расчет бонусов сотрудников"
+    }
+  }
+}
