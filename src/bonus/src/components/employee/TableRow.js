@@ -1,6 +1,20 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import axios from 'axios';
 
-class TableRow extends Component {
+class TableRow extends Component {e
+    constructor(props) {
+        super(props);
+        this.delete = this.delete.bind(this);
+    }
+    delete() {
+        axios.delete('http://localhost:8080/employee/'+this.props.obj.id)
+            .then(() => {
+                console.log('Deleted');
+                window.location.reload();
+            })
+            .catch(err => console.log(err))
+    }
+
     render() {
         return (
             <tr>
@@ -20,7 +34,7 @@ class TableRow extends Component {
                     <button className="btn btn-primary">Edit</button>
                 </td>
                 <td>
-                    <button className="btn btn-danger">Delete</button>
+                    <button onClick={this.delete} className="btn btn-danger">Delete</button>
                 </td>
             </tr>
         );

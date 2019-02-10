@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import TableRow from './TableRow';
 
@@ -11,7 +11,7 @@ export default class Index extends Component {
     componentDidMount(){
         axios.get('http://localhost:8080/employees')
             .then(response => {
-                console.log("success");
+                console.log(response.data);
                 this.setState({ employees: response.data });
             })
             .catch(function (error) {
