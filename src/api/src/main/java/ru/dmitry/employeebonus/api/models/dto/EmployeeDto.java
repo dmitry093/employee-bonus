@@ -2,11 +2,15 @@ package ru.dmitry.employeebonus.api.models.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import ru.dmitry.employeebonus.api.models.mysqldb.Employee;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class EmployeeDto {
     @JsonProperty("id")

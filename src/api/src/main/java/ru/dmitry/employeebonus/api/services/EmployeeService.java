@@ -29,4 +29,12 @@ public class EmployeeService {
         Optional<Employee> employee = employeeRepository.findById(id);
         return employee.map(EmployeeDto::new).orElse(null);
     }
+
+    public void deleteById(int id){
+         employeeRepository.deleteById(id);
+    }
+
+    public Employee save(EmployeeDto employeeDto){
+        return employeeRepository.save(new Employee(employeeDto));
+    }
 }
