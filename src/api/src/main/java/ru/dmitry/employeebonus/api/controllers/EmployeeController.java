@@ -45,6 +45,7 @@ public class EmployeeController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PutMapping("/employee/{id}")
     public ResponseEntity<Object> updateStudent(@RequestBody EmployeeDto updatedEmployee, @PathVariable int id) {
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class TableRow extends Component {e
     constructor(props) {
@@ -31,7 +32,7 @@ class TableRow extends Component {e
                     {this.props.obj.patronymic}
                 </td>
                 <td>
-                    <button className="btn btn-primary">Edit</button>
+                    <Link to={"/edit/"+this.props.obj.id} className="btn btn-primary">Edit</Link>
                 </td>
                 <td>
                     <button onClick={this.delete} className="btn btn-danger">Delete</button>
