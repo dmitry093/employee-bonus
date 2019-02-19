@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import {withTranslation} from 'react-i18next';
 import axios from 'axios';
 import TableRow from './TableRow';
 
-export default class Index extends Component {
+class Index extends Component {
 
     constructor(props) {
         super(props);
@@ -25,17 +26,18 @@ export default class Index extends Component {
     }
 
     render() {
+        const {t} = this.props;
         return (
             <div>
-                <h3 align="center">Employee List</h3>
+                <h3 align="center">{t('Employee list')}</h3>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>First name</th>
-                        <th>Second name</th>
-                        <th>Patronymic</th>
-                        <th colSpan="2">Action</th>
+                        <th>{t('First name')}</th>
+                        <th>{t('Second name')}</th>
+                        <th>{t('Patronymic')}</th>
+                        <th colSpan="2">{t('Action')}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -46,3 +48,5 @@ export default class Index extends Component {
         );
     }
 }
+
+export default withTranslation()(Index);

@@ -1,12 +1,31 @@
 {
   "en": {
     "translation": {
-      "Welcome": "Welcome to the Employee Bonus"
+      "Welcome": "Welcome to the Employee Bonus",
+      "rulang": "Change to russian",
+      "enlang": "Change to english"
     }
   },
   "ru": {
     "translation": {
-      "Welcome": "Добро пожаловать в расчет бонусов сотрудников"
+      "Welcome": "Добро пожаловать в расчет бонусов сотрудников",
+      "rulang": "Перейти на русский язык",
+      "enlang": "Перейти на английский язык",
+      "Success": "Отлично",
+      "Error": "Ошибка",
+      "Employee list": "Список сотрудников",
+      "First name": "Имя",
+      "Second name": "Фамилия",
+      "Patronymic": "Отчество",
+      "Action": "Действие",
+      "Edit": "Редактировать",
+      "Delete": "Удалить",
+      "Add employee": "Добавить сотрудника",
+      "Save": "Сохранить",
+      "Created": "Запись сохранена",
+      "Update employee": "Обновить данные сотрудника",
+      "Update": "Обновить",
+      "Updated": "Данные обновлены"
     }
   }
 }

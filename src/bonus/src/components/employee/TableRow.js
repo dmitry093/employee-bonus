@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import {withTranslation} from 'react-i18next';
 
 class TableRow extends Component {e
     constructor(props) {
@@ -17,6 +18,7 @@ class TableRow extends Component {e
     }
 
     render() {
+        const {t} = this.props;
         return (
             <tr>
                 <td>
@@ -32,14 +34,12 @@ class TableRow extends Component {e
                     {this.props.obj.patronymic}
                 </td>
                 <td>
-                    <Link to={"/edit/"+this.props.obj.id} className="btn btn-primary">Edit</Link>
-                </td>
-                <td>
-                    <button onClick={this.delete} className="btn btn-danger">Delete</button>
+                    <Link to={"/edit/"+this.props.obj.id} className="btn btn-primary mr-1">{t('Edit')}</Link>
+                    <button onClick={this.delete} className="btn btn-danger">{t('Delete')}</button>
                 </td>
             </tr>
         );
     }
 }
 
-export default TableRow;
+export default withTranslation()(TableRow);

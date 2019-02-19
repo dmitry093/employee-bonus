@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import {withTranslation} from 'react-i18next';
 
-export default class Edit extends Component {
+class Edit extends Component {
     constructor(props) {
         super(props);
         this.onChangeFirstName = this.onChangeFirstName.bind(this);
@@ -75,26 +76,27 @@ export default class Edit extends Component {
     }
 
     render() {
+        const {t} = this.props;
         let notification = null;
 
         if (this.state.updated) {
             notification = <div className="alert alert-success" role="alert">
-                <strong>Success!</strong> Updated.
+                <strong>{t('Success')}!</strong> {t('Updated')}.
             </div>;
         }
 
         if (this.state.errMsg !== '') {
             notification = <div className="alert alert-danger" role="alert">
-                <strong>Error!</strong> {this.state.errMsg}
+                <strong>{t('Error')}!</strong> {this.state.errMsg}
             </div>;
         }
         return (
             <div style={{marginTop: 10}}>
-                <h3 align="center">Update Employee</h3>
+                <h3 align="center">{t('Update employee')}</h3>
                 {notification}
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Firstname: </label>
+                        <label>{t('First name')}: </label>
                         <input
                             type="text"
                             className="form-control"
@@ -103,7 +105,7 @@ export default class Edit extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Secondname: </label>
+                        <label>{t('Second name')}: </label>
                         <input type="text"
                                className="form-control"
                                value={this.state.second_name}
@@ -111,7 +113,7 @@ export default class Edit extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Patronymic: </label>
+                        <label>{t('Patronymic')}: </label>
                         <input type="text"
                                className="form-control"
                                value={this.state.patronymic}
@@ -120,7 +122,7 @@ export default class Edit extends Component {
                     </div>
                     <div className="form-group">
                         <input type="submit"
-                               value="Update Employee"
+                               value={t('Update')}
                                className="btn btn-primary"/>
                     </div>
                 </form>
@@ -128,3 +130,5 @@ export default class Edit extends Component {
         )
     }
 }
+
+export default withTranslation()(Edit);
